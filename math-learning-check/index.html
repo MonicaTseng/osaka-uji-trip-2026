@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#163b54">
+  <meta name="description" content="免費、免登入、無需上傳個資的國二數學基礎學習檢核。24題協助家長了解數感、分數、負數、代數與應用題的補強方向。">
+  <title>國二數學學習檢核｜找到卡住的地方</title>
+  <style>
+    :root{--navy:#163b54;--ink:#1d3547;--muted:#587080;--teal:#107d78;--teal-dark:#086661;--mint:#e9f7f3;--gold:#e8aa48;--bg:#f4f8fa;--line:#dbe6eb;--card:#fff;--warn:#80551d;--warnbg:#fff6e6;--red:#ac4648;--green:#0b7662;--shadow:0 18px 42px rgba(30,65,83,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:var(--ink);line-height:1.7;font-size:16px}
+    button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #efb64c;outline-offset:3px}
+    a{color:#116d88}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.22;letter-spacing:-.04em;margin-bottom:22px}h2{font-size:clamp(1.45rem,2.8vw,2rem);line-height:1.32}h3{font-size:1.13rem;margin-bottom:8px}p{margin-bottom:12px}small,.small{font-size:.88rem;color:var(--muted)}
+    .shell{width:min(960px,calc(100% - 32px));margin:0 auto}.topbar{background:var(--navy);color:#fff;padding:16px 0}.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:800;letter-spacing:.025em;font-size:1.06rem}.tagline{font-size:.8rem;opacity:.85}.header-pill{border:1px solid #7dabb7;border-radius:50px;padding:5px 12px;font-size:.78rem;white-space:nowrap}
+    main{padding:32px 0 56px}section[hidden]{display:none!important}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:stretch}.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:clamp(22px,4vw,40px)}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--teal-dark);padding:5px 13px;border-radius:40px;font-size:.85rem;font-weight:750;margin-bottom:22px}.lead{font-size:1.08rem;color:#4b6676;max-width:54ch}
+    .btn{border:0;padding:13px 22px;border-radius:13px;font-weight:750;min-height:48px;transition:transform .12s ease,background .12s ease}.btn:hover:not(:disabled){transform:translateY(-1px)}.btn:disabled{opacity:.45;cursor:not-allowed}.btn-primary{background:var(--teal);color:#fff}.btn-primary:hover:not(:disabled){background:var(--teal-dark)}.btn-secondary{background:#edf3f5;color:var(--ink);border:1px solid var(--line)}.btn-link{border:0;background:transparent;color:var(--teal-dark);padding:8px 6px;font-weight:700}.button-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.info-list{margin:0;padding-left:20px;color:#425b6b}.info-list li{padding:4px 0}.statline{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}.stat{padding:16px;border-radius:15px;background:#f2f7f8}.stat strong{display:block;font-size:1.7rem;line-height:1.2;color:var(--navy)}.stat span{font-size:.83rem;color:#587080}.side-title{font-weight:800;margin:5px 0 10px}.notice{background:#fff8ea;border-left:4px solid var(--gold);padding:13px 16px;border-radius:0 12px 12px 0;font-size:.92rem;color:#66501e}.kicker{display:inline-block;color:var(--teal);font-size:.8rem;font-weight:800;letter-spacing:.07em;margin-bottom:9px}
+    .stepbar{display:flex;gap:8px;margin-bottom:18px;align-items:center;color:var(--muted);font-size:.87rem}.step{display:flex;gap:7px;align-items:center;white-space:nowrap}.step-dot{width:25px;height:25px;border:1px solid var(--line);background:#fff;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.75rem}.step.active{color:var(--teal-dark);font-weight:800}.step.active .step-dot{background:var(--teal);color:#fff;border-color:var(--teal)}.step-sep{height:1px;background:var(--line);flex:1}
+    .quiz-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.progress-track{height:10px;border-radius:50px;background:#e5edef;overflow:hidden;margin:15px 0 18px}.progress-fill{height:100%;background:linear-gradient(90deg,#2a9189,#54bdab);width:0%;transition:width .2s ease}.domain-badge{display:inline-block;background:#ecf6f5;color:#0d766f;border-radius:9px;font-size:.84rem;font-weight:800;padding:5px 10px;margin:10px 0 16px}.question-title{font-size:clamp(1.35rem,3vw,1.85rem);font-weight:800;line-height:1.55;margin-bottom:19px;white-space:pre-line}
+    .options{display:grid;gap:11px}.option{display:flex;align-items:center;text-align:left;gap:15px;background:#fff;border:2px solid var(--line);border-radius:15px;padding:15px 16px;color:var(--ink);min-height:58px;font-weight:650}.option:hover{border-color:#7faca9;background:#f9fcfc}.option.selected{background:#eaf7f3;border-color:var(--teal);box-shadow:0 0 0 2px #d2ebe5}.choice-mark{display:grid;place-items:center;flex-shrink:0;width:30px;height:30px;border-radius:8px;background:#eef3f5;color:var(--muted);font-size:.86rem;font-weight:800}.selected .choice-mark{background:var(--teal);color:#fff}.quiz-actions{margin-top:24px;display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}.help-text{font-size:.9rem;color:var(--muted);margin-top:16px}.minor-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .obs-item{display:flex;gap:13px;border:1px solid var(--line);border-radius:15px;padding:13px 15px;margin:11px 0;cursor:pointer;background:#fff}.obs-item:has(input:checked){background:var(--mint);border-color:#9ad0c4}.obs-item input{width:19px;height:19px;accent-color:var(--teal);margin-top:5px;flex-shrink:0}.obs-item b{display:block;font-size:.98rem}.obs-item span{font-size:.88rem;color:var(--muted)}
+    .results-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}.total-stat{border-radius:15px;background:#eaf5f2;padding:12px 18px;text-align:center;min-width:126px;color:#175c53}.total-stat strong{display:block;font-size:2rem;line-height:1.12}.total-stat small{color:#3d716d}.domains-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 23px}.domain-result{border:1px solid var(--line);border-radius:16px;padding:17px;background:#fff}.domain-result .line{display:flex;justify-content:space-between;align-items:center;gap:12px}.mini-track{margin:12px 0 8px;height:9px;border-radius:9px;background:#e8f0f2;overflow:hidden}.mini-fill{height:100%;background:var(--teal);border-radius:9px}.mini-fill.low{background:#d6a04d}.mini-fill.middle{background:#5b9aad}.label-state{font-size:.83rem;font-weight:750;color:#716143}.label-state.good{color:var(--green)}.section-divider{border-top:1px solid var(--line);margin:28px 0}.recommend{display:grid;gap:10px;margin:14px 0}.rec-item{display:grid;grid-template-columns:30px 1fr;gap:12px;border:1px solid var(--line);border-radius:15px;padding:16px}.rec-index{width:30px;height:30px;display:grid;place-items:center;color:#fff;background:var(--teal);border-radius:9px;font-weight:800}.week-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.week{background:#f5f9fa;border:1px solid var(--line);padding:16px;border-radius:15px}.week b{color:#086c66;font-size:.9rem}.week h3{margin:5px 0 3px}.week p{font-size:.9rem;color:#4b6371;margin:0}
+    details{border:1px solid var(--line);border-radius:13px;margin:10px 0;background:#fff}summary{padding:14px 16px;cursor:pointer;font-weight:750}details .detail-body{padding:0 16px 16px;font-size:.92rem}details p{margin:5px 0}.status-right{float:right;font-size:.8rem;margin-left:12px;font-weight:800}.status-wrong{color:#a05736}.status-unknown{color:#8a742b}.status-correct{color:#0e7663}.sources{border-top:1px solid var(--line);padding-top:16px;margin-top:26px;font-size:.85rem;color:var(--muted)}.sources a{overflow-wrap:anywhere}.footer{text-align:center;color:var(--muted);font-size:.84rem;padding:30px 0 10px}.pillrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.pill{font-size:.8rem;background:#ecf5f7;border-radius:40px;padding:5px 11px;font-weight:700;color:#3b6974}.hide-print{}#copyMessage{font-size:.84rem;color:var(--teal-dark);min-height:22px}.compact-intro{max-width:700px;margin:0 auto}
+    @media(max-width:740px){.hero{grid-template-columns:1fr}.panel{border-radius:19px}.domains-grid,.week-grid{grid-template-columns:1fr}.quiz-top{display:block}.stepbar{font-size:.75rem}.statline{margin-bottom:18px}.tagline{display:none}.quiz-actions{flex-direction:column-reverse;align-items:stretch}.quiz-actions>*{width:100%}.minor-actions{justify-content:center}.button-row .btn{flex:1}.option{min-height:60px}.header-pill{font-size:.72rem}.results-head{display:block}.total-stat{text-align:left;margin-top:13px}}
+    @media print{body{background:#fff;color:#000;font-size:11pt}.topbar,.footer,.no-print,.button-row,.stepbar{display:none!important}main{padding:0}.shell{width:100%}.panel{box-shadow:none;border:none;padding:0}.domain-result,.week,.rec-item{break-inside:avoid}details{break-inside:avoid}details .detail-body{display:block!important}.domains-grid{grid-template-columns:repeat(2,1fr)}.week-grid{grid-template-columns:repeat(2,1fr)}#resultScreen{display:block!important}h1{font-size:21pt}h2{font-size:15pt}.sources{margin-top:16px}a{color:#000;text-decoration:none}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar no-print"><div class="shell topbar-inner"><div><div class="brand">✦ 數學學習地圖</div><div class="tagline">不是考高分，而是找到下一步</div></div><span class="header-pill">八年級・家庭檢核版</span></div></header>
+  <main class="shell">
+    <section id="startScreen" class="screen">
+      <div class="hero">
+        <div class="panel">
+          <div class="eyebrow">✦ 為數學一直卡關的國中生設計</div>
+          <h1>數學不是不行，<br>可能只是有一段<br><span style="color:var(--teal)">還沒接上。</span></h1>
+          <p class="lead">這份檢核會從國小高年級一路看到國二，幫你們初步找出：到底是分數、負數、代數，還是文字題比較容易卡住。</p>
+          <div class="pillrow"><span class="pill">24 道選擇題</span><span class="pill">約 20–30 分鐘</span><span class="pill">不計時、不排名</span></div>
+          <div class="button-row"><button type="button" id="startBtn" class="btn btn-primary">開始學習檢核 →</button></div>
+          <p class="small" style="margin-top:13px">請學生自己作答，家長不要提示；遇到不會的題目，直接選「暫時不會」。</p>
+        </div>
+        <aside class="panel">
+          <div class="statline"><div class="stat"><strong>6</strong><span>個能力面向</span></div><div class="stat"><strong>4</strong><span>題／每個面向</span></div></div>
+          <div class="side-title">完成後會得到</div>
+          <ul class="info-list"><li>六大能力的答題概況</li><li>最優先補強的基礎觀念</li><li>依結果安排的四週起步計畫</li><li>錯題解析與家長觀察摘要</li><li>可列印、存成 PDF 或下載文字報告</li></ul>
+          <div class="notice" style="margin-top:24px"><strong>重要提醒</strong><br>這是自編的學習檢核，不是標準化測驗，也<strong>不能診斷數學學習障礙</strong>。若孩子從小長期困難，請和學校教師、輔導室或特教組討論。</div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="quizScreen" class="screen" hidden>
+      <div class="stepbar no-print" aria-label="檢核步驟"><span class="step active"><span class="step-dot">1</span>學生作答</span><span class="step-sep"></span><span class="step"><span class="step-dot">2</span>家長觀察</span><span class="step-sep"></span><span class="step"><span class="step-dot">3</span>分析報告</span></div>
+      <div class="panel compact-intro">
+        <div class="quiz-top"><div><div class="kicker">學習能力檢核</div><h2 id="progressTitle" style="margin-bottom:0">第 1 題／共 24 題</h2></div><div class="small" id="answeredCount">已回答 0 題</div></div>
+        <div class="progress-track" role="progressbar" aria-label="完成進度" aria-valuemin="0" aria-valuemax="24" aria-valuenow="0" id="progressTrack"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="domain-badge" id="questionDomain"></div>
+        <div class="question-title" id="questionTitle"></div>
+        <div id="questionOptions" class="options" role="group" aria-label="請選擇一個答案"></div>
+        <div class="help-text" id="quizHint">請選最符合自己想法的答案；不需要搶快。</div>
+        <div class="quiz-actions no-print"><button class="btn btn-secondary" id="prevBtn" type="button">← 上一題</button><div class="minor-actions"><button class="btn-link" type="button" id="unknownBtn">暫時不會</button><button class="btn-link" type="button" id="notTaughtBtn" hidden>學校尚未教到</button><button class="btn-link" type="button" id="skipAllBtn" hidden>整組尚未教到</button></div><button class="btn btn-primary" type="button" id="nextBtn" disabled>下一題 →</button></div>
+      </div>
+    </section>
+
+    <section id="observeScreen" class="screen" hidden>
+      <div class="stepbar no-print"><span class="step"><span class="step-dot">✓</span>學生作答</span><span class="step-sep"></span><span class="step active"><span class="step-dot">2</span>家長觀察</span><span class="step-sep"></span><span class="step"><span class="step-dot">3</span>分析報告</span></div>
+      <div class="panel compact-intro">
+        <div class="kicker">家長填寫・可跳過</div><h2>平常學數學時，有哪些情況？</h2>
+        <p class="small">以下不是醫療或學習障礙診斷問卷。請只勾選家長確實觀察過的情況，沒有觀察到的可以不選。</p>
+        <div id="obsOptions"></div>
+        <div class="notice" style="margin-top:18px">如果學生從小長期只有數學特別弱，建議把歷年考卷、補救紀錄帶給學校老師討論，不要只憑這份結果自行判定原因。</div>
+        <div class="button-row no-print"><button class="btn btn-secondary" id="backToQuiz" type="button">← 返回最後一題</button><button class="btn btn-primary" id="resultBtn" type="button">產生分析報告 →</button></div>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen" hidden>
+      <div class="stepbar no-print"><span class="step"><span class="step-dot">✓</span>學生作答</span><span class="step-sep"></span><span class="step"><span class="step-dot">✓</span>家長觀察</span><span class="step-sep"></span><span class="step active"><span class="step-dot">3</span>分析報告</span></div>
+      <article class="panel" id="printableReport">
+        <div class="results-head"><div><div class="kicker">個人化學習地圖</div><h1 style="margin-bottom:10px">國二數學學習檢核報告</h1><p class="small" id="reportDate"></p></div><div class="total-stat" id="totalStat"></div></div>
+        <div class="notice">本報告是少量自編題目的<strong>學習線索</strong>，不是智力測驗、數學能力常模測驗或學習障礙篩檢工具；單一面向僅4題，分數容易波動，須搭配解題過程、學校考卷與教師觀察。</div>
+        <h2 style="margin-top:28px">一、六個能力面向</h2><div id="domainResults" class="domains-grid"></div>
+        <h2>二、最值得先補的地方</h2><p class="small">依國小基礎到國中代數的先備順序排列；答錯不代表一定不懂，還要問學生為什麼選那個答案。</p><div id="recommendations" class="recommend"></div>
+        <h2 style="margin-top:26px">三、四週起步計畫</h2><p class="small">每日約20–30分鐘、每週5天。每次先示範1題、陪做1題、獨立做3題；隔天與數日後再複習。每週仍保留時間接觸學校目前教的基本題。</p><div id="weeklyPlan" class="week-grid"></div>
+        <div class="section-divider"></div>
+        <h2>四、家長觀察與學校合作</h2><div id="observationSummary"></div><p class="small">若數學困難從小持續、對適當補救反應有限，或影響學習信心，可帶本報告與錯題紀錄諮詢導師、數學老師、學習扶助承辦人、輔導室或特教組。學習障礙須由專業程序多元評估，不能靠線上題目判定。</p>
+        <h2 style="margin-top:25px">五、逐題回顧與解析</h2><p class="small">建議先讓孩子說出自己的計算過程，再看答案說明。只列出答錯與「暫時不會」的題目；已教且答對的題目不重複顯示。</p><div id="reviewList"></div>
+        <div class="sources"><strong>參考資源</strong><br><a href="https://ies.ed.gov/ncee/wwc/PracticeGuide/2/" target="_blank" rel="noopener noreferrer">美國教育科學研究所：國小至國中數學學習困難的教學介入指引</a><br><a href="https://exam.tcte.edu.tw/" target="_blank" rel="noopener noreferrer">教育部國民中小學學生學習扶助科技化評量</a>（正式施測請洽學校）<br><a href="https://edu.law.moe.gov.tw/LawContent.aspx?id=FL009187" target="_blank" rel="noopener noreferrer">教育部《特殊教育學生及幼兒鑑定辦法》</a><br>題目與結果分類為本網頁自編，未經標準化信效度驗證。</div>
+      </article>
+      <div class="button-row no-print" style="justify-content:center"><button class="btn btn-primary" id="printBtn" type="button">列印／存成 PDF</button><button class="btn btn-secondary" id="downloadBtn" type="button">下載文字報告</button><button class="btn btn-secondary" id="copyBtn" type="button">複製摘要</button><button class="btn btn-secondary" id="restartBtn" type="button">重新檢核</button></div><div id="copyMessage" style="text-align:center" class="no-print" aria-live="polite"></div>
+    </section>
+    <footer class="footer no-print">所有作答僅在目前瀏覽器分頁中處理，不會傳送到伺服器，也不需要帳號或姓名。重新整理頁面將清除答案。<br>家庭自我檢核工具・非正式診斷</footer>
+  </main>
+<script>
+(function(){'use strict';
+  const domainInfo = {
+    sense:{name:'數感、大小與估算',level:'國小高年級基礎',teach:'先用數線、百格圖與生活價格，練習比較小數、分數、百分率，再練合理估算。',action:'用價格和百分格比較大小，每天5題；先說理由，再計算。',target:'比較大小、估算與百分率'},
+    fraction:{name:'分數與小數運算',level:'國小高年級基礎',teach:'用分數條畫出相同大小的單位，重新理解通分、乘法與除法，而不是只背口訣。',action:'用圖解釋通分和分數四則，先同分母再異分母，每次3～5題。',target:'分數通分與四則'},
+    signed:{name:'正負數與運算順序',level:'國一基礎',teach:'用數線、溫度與收支情境理解負數，再練正負號及先乘除後加減。',action:'數線移動、括號及正負數混合練習，完成後用估算檢查符號。',target:'正負數、括號與運算順序'},
+    algebra:{name:'代數式與方程式',level:'國一銜接國二',teach:'先用「某個數」代替 x，搭配天平平衡概念，練去括號、合併同類項與等式兩邊同做。',action:'練分配律、代入檢查、一元一次方程式；要求說出每一步理由。',target:'去括號、代數式與一元一次方程式'},
+    word:{name:'文字題與列式',level:'國小高年級～國一',teach:'先把題目畫成「已知、未知、關係」，讓孩子用自己的話重述，再把關係轉成算式。',action:'每日選2題短文字題，圈出數量關係、畫圖、最後列式。',target:'理解數量關係與列式'},
+    current:{name:'國二課程銜接',level:'依學校實際進度',teach:'只針對學校已教過的乘法公式、多項式、平方根或因式分解補基礎；未教內容不應視為能力不足。',action:'和課本進度對照，從已教單元的定義和例題開始，不急著做難題。',target:'國二已教單元基本題'}
+  };
+  const questions = [
+    {d:'sense',q:'哪一個數比較大？',choices:['0.65','0.7','兩個一樣大','兩個都不是小數'],a:1,why:'把 0.7 寫成 0.70，比 0.65 大。',look:'可能把小數點後的位數越多誤認為數越大。'},
+    {d:'sense',q:'48 × 19 的答案，最接近哪個數？',choices:['100','500','1000','5000'],a:2,why:'48 接近 50、19 接近 20，所以約為 50 × 20 = 1000；實際是 912。',look:'看看能否先估算，而不只是硬算。'},
+    {d:'sense',q:'哪一個分數比較大？',choices:['3/4','2/3','一樣大','不能比較'],a:0,why:'3/4 = 9/12；2/3 = 8/12，因此 3/4 較大。也可以畫分數條。',look:'確認是否會比較不同分母的分數。'},
+    {d:'sense',q:'200 元的 15% 是多少元？',choices:['15 元','20 元','30 元','300 元'],a:2,why:'10% 是20元，5% 是10元，合起來15%是30元。',look:'看百分比是否有數量直覺。'},
+    {d:'fraction',q:'1/2 + 1/3 = ?',choices:['2/5','5/6','2/6','1/5'],a:1,why:'先通分：1/2 = 3/6，1/3 = 2/6，加起來是 5/6。',look:'若選2/5，可能把分子和分母各自相加。'},
+    {d:'fraction',q:'3/4 − 1/8 = ?',choices:['2/4','1/8','5/8','1/2'],a:2,why:'3/4 = 6/8；6/8 − 1/8 = 5/8。',look:'確認能否先找共同單位（通分）。'},
+    {d:'fraction',q:'2/3 × 3/4 = ?',choices:['5/7','1/2','6/7','2'],a:1,why:'2/3 × 3/4 = 6/12 = 1/2。可以約分再相乘。',look:'看分數乘法是否和加法的規則混淆。'},
+    {d:'fraction',q:'3/5 ÷ 1/2 = ?',choices:['3/10','3/5','6/5','5/6'],a:2,why:'除以 1/2 等於乘以 2，所以 3/5 × 2 = 6/5。',look:'確認是否懂「除以半個」的意義。'},
+    {d:'signed',q:'(-7) + 12 = ?',choices:['-19','-5','5','19'],a:2,why:'從 -7 往右走12格，會到 5。',look:'可用數線確認負數加正數。'},
+    {d:'signed',q:'(-3) × (-4) = ?',choices:['-12','12','7','-7'],a:1,why:'兩個負數相乘得到正數；3 × 4 = 12。',look:'是否記混同號、異號相乘的規則。'},
+    {d:'signed',q:'6 − (-4) = ?',choices:['2','-2','10','-10'],a:2,why:'減去負4，等於加上4：6 + 4 = 10。',look:'是否能辨認「減號」和「負號」的不同角色。'},
+    {d:'signed',q:'3 + 2 × (-4) = ?',choices:['-20','-5','20','-11'],a:1,why:'先乘法：2 × (-4) = -8；再算 3 + (-8) = -5。',look:'是否忽略先乘除後加減。'},
+    {d:'algebra',q:'化簡：3(x − 2) − 2x = ?',choices:['x − 6','x − 2','5x − 6','x + 6'],a:0,why:'3(x−2) = 3x−6，再減去 2x，得到 x−6。',look:'若漏乘括號內的 −2，通常是分配律斷點。'},
+    {d:'algebra',q:'2x + 5 = 17，x = ?',choices:['6','11','7','5'],a:0,why:'兩邊先減5：2x=12，再兩邊除以2：x=6。',look:'看是否理解等號兩邊的平衡。'},
+    {d:'algebra',q:'3(x − 1) = 2x + 5，x = ?',choices:['2','4','8','10'],a:2,why:'3x−3=2x+5；兩邊減2x，再加3，得到 x=8。',look:'多步驟解題容易在哪一行卡住？'},
+    {d:'algebra',q:'若 a = −2，則 2a² − 3 = ?',choices:['-11','5','1','-5'],a:1,why:'先平方：a² = (−2)² = 4；再算 2×4−3=5。',look:'檢查負數代入與平方的運算順序。'},
+    {d:'word',q:'每本筆記本 x 元，買 3 本，再付運費 20 元，總共多少元？',choices:['3(x + 20)','3x + 20','x + 23','20x + 3'],a:1,why:'3本筆記本共3x元，整筆訂單運費只付一次20元，所以是3x+20。',look:'能否分辨「每本」和「整筆」的費用。'},
+    {d:'word',q:'小美有 x 顆糖，阿明比小美多 5 顆。阿明有幾顆？',choices:['5x','x − 5','x + 5','x ÷ 5'],a:2,why:'阿明的數量比小美多5，因此是x+5。',look:'是否能把「比……多」轉成加法關係。'},
+    {d:'word',q:'「某數的兩倍減7等於15」，正確的式子是哪個？',choices:['2x − 7 = 15','2(x − 7) = 15','7 − 2x = 15','2x + 7 = 15'],a:0,why:'某數是x，兩倍為2x，再減7，等於15。',look:'是否能將語句逐段翻譯成算式。'},
+    {d:'word',q:'一件衣服原價 400 元，打八折後應付多少元？',choices:['80 元','320 元','392 元','480 元'],a:1,why:'八折表示付原價的80%，400×0.8=320元。',look:'確認百分率與日常生活情境的轉換。'},
+    {d:'current',q:'【國二銜接】(x + 2)(x + 3) = ?',choices:['x² + 6','x² + 5x + 6','x² + 6x + 5','x² + 5x + 5'],a:1,why:'依分配律：x²+3x+2x+6=x²+5x+6。',look:'需先熟練國一分配律；若學校尚未教，請選「尚未教到」。'},
+    {d:'current',q:'【國二銜接】(a − b)² = ?',choices:['a² − b²','a² − 2ab + b²','a² + 2ab + b²','a² + b²'],a:1,why:'(a−b)(a−b)=a²−ab−ab+b²=a²−2ab+b²。',look:'留意中間的 −2ab，乘法公式不是只平方兩端。'},
+    {d:'current',q:'【國二銜接】x² + 5x + 6 可以寫成哪一個乘積？',choices:['(x + 1)(x + 6)','(x + 2)(x + 3)','(x − 2)(x − 3)','(x + 1)(x + 5)'],a:1,why:'2+3=5，2×3=6，所以可寫成 (x+2)(x+3)。',look:'若學校尚未教因式分解，請選「尚未教到」。'},
+    {d:'current',q:'【國二銜接】√81 的值是多少？',choices:['9','−9','±9','81'],a:0,why:'√81 表示81的非負平方根，因此為9；解 x²=81 才會得到 x=±9。',look:'若學校尚未教平方根，請選「尚未教到」。'}
+  ];
+  const observationItems=[
+    ['從國小低年級開始，就較難掌握數量大小或基本計算','例如常依賴數手指，或不容易判斷答案大小。'],
+    ['分數、小數或負數反覆練習，仍經常混淆','即使換成非常簡單的題目也會卡住。'],
+    ['老師示範時好像懂，自己做就不會','尤其是相似但數字不同的題目。'],
+    ['當下學會，隔幾天又忘記','需要反覆從頭教相同概念。'],
+    ['遇到兩步驟以上的題目，容易漏掉順序','抄錯符號、忘記前一步或算到一半卡住。'],
+    ['一看到數學就緊張、逃避或說自己不行','容易放棄，即使題目本來會做。'],
+    ['曾持續接受個別補救或學習扶助，仍改善有限','請盡量保留教學、練習及測驗紀錄。']
+  ];
+  const $=id=>document.getElementById(id);
+  let index=0,answers=Array(questions.length).fill(null),observations=Array(observationItems.length).fill(false),reportText='';
+  function show(screen){['startScreen','quizScreen','observeScreen','resultScreen'].forEach(id=>$(id).hidden=id!==screen);window.scrollTo({top:0,behavior:'instant'});}
+  function answeredCount(){return answers.filter(a=>a!==null).length;}
+  function setAnswer(v){answers[index]=v;renderQuestion();}
+  function renderQuestion(){const q=questions[index],d=domainInfo[q.d];$('progressTitle').textContent=`第 ${index+1} 題／共 ${questions.length} 題`;$('answeredCount').textContent=`已回答 ${answeredCount()} 題`;$('questionDomain').textContent=`${d.name}｜${d.level}`;$('questionTitle').textContent=q.q;$('progressFill').style.width=`${(index+1)/questions.length*100}%`;$('progressTrack').setAttribute('aria-valuenow',index+1);
+    const choices=$('questionOptions');choices.innerHTML='';q.choices.forEach((ch,k)=>{const btn=document.createElement('button');btn.type='button';btn.className='option'+(answers[index]===k?' selected':'');btn.setAttribute('aria-pressed',String(answers[index]===k));const mark=document.createElement('span');mark.className='choice-mark';mark.textContent=String.fromCharCode(65+k);const label=document.createElement('span');label.textContent=ch;btn.append(mark,label);btn.addEventListener('click',()=>setAnswer(k));choices.appendChild(btn);});
+    if(answers[index]==='U'||answers[index]==='N'){const chosen=document.createElement('p');chosen.className='small';chosen.style.margin='12px 0 -4px';chosen.textContent=answers[index]==='U'?'✓ 已標記「暫時不會」':'✓ 已標記「學校尚未教到」，此題不計分';choices.appendChild(chosen);}
+    $('prevBtn').disabled=index===0;$('nextBtn').disabled=answers[index]===null;$('nextBtn').textContent=index===questions.length-1?'前往家長觀察 →':'下一題 →';const grade8=q.d==='current';$('notTaughtBtn').hidden=!grade8;$('skipAllBtn').hidden=!grade8||index!==20;$('quizHint').textContent=grade8?'國二題只需作答學校「已教過」的內容。尚未學過，請點「學校尚未教到」。':'請依自己目前的能力選擇。不會可以直接標記，不用猜答案。';
+  }
+  function renderObs(){const root=$('obsOptions');root.innerHTML='';observationItems.forEach((item,i)=>{const wrap=document.createElement('label');wrap.className='obs-item';const chk=document.createElement('input');chk.type='checkbox';chk.checked=observations[i];chk.addEventListener('change',()=>{observations[i]=chk.checked;});const copy=document.createElement('div');const title=document.createElement('b');title.textContent=item[0];const desc=document.createElement('span');desc.textContent=item[1];copy.append(title,desc);wrap.append(chk,copy);root.appendChild(wrap);});}
+  function domainScores(){return Object.keys(domainInfo).map(key=>{const ids=questions.map((q,i)=>q.d===key?i:-1).filter(i=>i>=0);const eligible=ids.filter(i=>answers[i]!=='N');const correct=eligible.filter(i=>answers[i]===questions[i].a).length;const unknown=eligible.filter(i=>answers[i]==='U'||answers[i]===null).length;return {key,name:domainInfo[key].name,ids,eligible:eligible.length,correct,unknown,ratio:eligible.length?correct/eligible.length:null};});}
+  function stateLabel(score){if(score.eligible===0)return '未評估（尚未教到）';if(score.ratio<.5)return '優先釐清基礎';if(score.ratio<.75)return '建議再練習';return '這次表現相對穩定';}
+  function elm(tag,cl,text){const e=document.createElement(tag);if(cl)e.className=cl;if(text!=null)e.textContent=text;return e;}
+  function addText(parent,tag,cl,text){const e=elm(tag,cl,text);parent.appendChild(e);return e;}
+  function renderResults(){const scores=domainScores(),core=scores.filter(s=>s.key!=='current'),weak=core.filter(s=>s.ratio<.75),ranked=weak.length?weak:core.slice().sort((a,b)=>a.ratio-b.ratio).slice(0,2);
+    const coreCorrect=core.reduce((s,x)=>s+x.correct,0);const coreTotal=core.reduce((s,x)=>s+x.eligible,0);const current=scores.find(s=>s.key==='current');
+    $('reportDate').textContent=`檢核日期：${new Date().toLocaleDateString('zh-TW')}｜以實際學校進度為準`;
+    $('totalStat').innerHTML=`<strong>${coreCorrect}/${coreTotal}</strong><small>前20題基礎作答正確數</small>`;
+    const root=$('domainResults');root.innerHTML='';scores.forEach(s=>{const c=elm('div','domain-result');const line=elm('div','line');addText(line,'strong','',s.name);addText(line,'strong','',s.eligible?`${s.correct}/${s.eligible}`:'未計分');c.appendChild(line);const bar=elm('div','mini-track');const fill=elm('div','mini-fill '+(s.ratio!==null&&s.ratio<.5?'low':s.ratio!==null&&s.ratio<.75?'middle':''));fill.style.width=`${Math.round((s.ratio||0)*100)}%`;bar.appendChild(fill);c.appendChild(bar);addText(c,'div','label-state '+(s.ratio!==null&&s.ratio>=.75?'good':''),stateLabel(s));if(s.key==='current'&&s.eligible<4)addText(c,'div','small',`有 ${4-s.eligible} 題標記尚未教到，已排除。`);root.appendChild(c);});
+    const rec=$('recommendations');rec.innerHTML='';const summary=weak.length?`建議先從「${ranked.slice(0,2).map(s=>s.name).join('」與「')}」開始，補強後再進到更複雜題型。`:'這次前20題未見明顯低於3/4的領域；仍可核對段考卷，看是否因應用題、多步驟解題、考試情境或國二新單元失分。';addText(rec,'p','',summary);
+    ranked.slice(0,3).forEach((s,i)=>{const item=elm('div','rec-item');addText(item,'span','rec-index',String(i+1));const copy=elm('div');addText(copy,'h3','',`${s.name}（${s.correct}/${s.eligible}）`);addText(copy,'p','',domainInfo[s.key].teach);addText(copy,'div','small',`從這裡開始：${domainInfo[s.key].action}`);item.appendChild(copy);rec.appendChild(item);});
+    if(current.eligible>0&&current.ratio<.75){const div=elm('div','notice');div.textContent=`國二銜接題答對 ${current.correct}/${current.eligible}。請先檢查這些題目是否已在學校教過；若已學過，可連同國一代數一起補強。`;rec.appendChild(div);}
+    const base=weak.map(s=>s.key);const stages=base.length?base.slice(0,3):['algebra','word'];while(stages.length<3){stages.push(stages.length===1?stages[0]:stages[0]);}
+    const weekly=[{label:'第1週｜找到主要斷點',key:stages[0],note:domainInfo[stages[0]].action},{label:'第2週｜第二個先備能力',key:stages[1],note:domainInfo[stages[1]].action},{label:'第3週｜深化與隔日複習',key:stages[2],note:domainInfo[stages[2]].action},{label:'第4週｜混合檢驗與銜接',key:'mixed',note:'重做前三週錯題的變化題，每個領域各抽3題新題檢核；同步做學校正在教的基本題。'}];
+    const plans=$('weeklyPlan');plans.innerHTML='';weekly.forEach((w,i)=>{const card=elm('div','week');addText(card,'b','',w.label);addText(card,'h3','',w.key==='mixed'?'回顧＋當前單元':domainInfo[w.key].target);addText(card,'p','',w.note);plans.appendChild(card);});
+    const obsRoot=$('observationSummary');obsRoot.innerHTML='';const selected=observations.map((v,i)=>v?observationItems[i][0]:null).filter(Boolean);if(selected.length){addText(obsRoot,'p','','家長勾選的觀察：');const ul=elm('ul','info-list');selected.forEach(str=>addText(ul,'li','',str));obsRoot.appendChild(ul);}else{addText(obsRoot,'p','','家長未勾選額外觀察項目；建議和孩子討論「聽課、計算、文字題、記憶或緊張」是哪個環節最容易卡住。');}
+    if(observations[0]||observations[1]||observations[6]){const n=elm('div','notice');n.style.marginTop='12px';n.textContent='若上述困難確實從小持續，建議同步洽學校數學老師或輔導／特教人員，蒐集課堂表現和補救紀錄。此處只是建議尋求協助，不代表有任何診斷結果。';obsRoot.appendChild(n);}
+    const review=$('reviewList');review.innerHTML='';let hasWrong=false;questions.forEach((q,i)=>{const ans=answers[i];if(ans===q.a||ans==='N')return;hasWrong=true;const detail=elm('details');detail.open=true;const title=elm('summary');addText(title,'span','',`第 ${i+1} 題：${q.q}`);addText(title,'span','status-right '+(ans==='U'?'status-unknown':'status-wrong'),ans==='U'?'暫時不會':'作答需檢查');detail.appendChild(title);const body=elm('div','detail-body');addText(body,'p','',`本次選擇：${typeof ans==='number'?q.choices[ans]:'暫時不會'}；參考答案：${q.choices[q.a]}`);addText(body,'p','',`解題說明：${q.why}`);addText(body,'p','small',`觀察提示：${q.look}`);detail.appendChild(body);review.appendChild(detail);});if(!hasWrong)addText(review,'p','small','這次已評估題目都答對了。建議搭配學校近期考卷與稍微不同的題型再次確認。');
+    if(questions.some((q,i)=>answers[i]==='N'))addText(review,'p','small',`國二銜接題中有 ${answers.filter(a=>a==='N').length} 題尚未教過，未列入本次錯題，也不計分。`);
+    reportText=createReportText(scores,ranked,weekly,selected,coreCorrect,coreTotal,current);
+  }
+  function createReportText(scores,ranked,weekly,selected,coreCorrect,coreTotal,current){let lines=[
+    '國二數學學習檢核｜家庭自我檢核報告',`日期：${new Date().toLocaleDateString('zh-TW')}`,
+    `國小高年級～國一基礎20題：${coreCorrect}/${coreTotal} 題答對`,
+    `國二銜接題：${current.eligible?`${current.correct}/${current.eligible}題答對`:'未評估（全為尚未教到）'}`,
+    '', '六大面向：',...scores.map(s=>`・${s.name}：${s.eligible?`${s.correct}/${s.eligible}；${stateLabel(s)}`:'尚未教過／未計分'}`),'',
+    '優先補強方向：',...ranked.slice(0,3).map((s,i)=>`${i+1}. ${s.name}：${domainInfo[s.key].teach}`),'',
+    '四週起步計畫：',...weekly.map((w,i)=>`${i+1}. ${w.label}｜${w.key==='mixed'?'回顧＋當前單元':domainInfo[w.key].target}：${w.note}`),'',
+    '家長觀察：',...(selected.length?selected.map(s=>'・'+s):['未勾選額外觀察項目']),'',
+    '需回顧的題目：'
+  ];questions.forEach((q,i)=>{const a=answers[i];if(a===q.a||a==='N')return;lines.push(`第${i+1}題 ${q.q}`);lines.push(`本次：${typeof a==='number'?q.choices[a]:'暫時不會'}｜參考：${q.choices[q.a]}`);lines.push(q.why);});lines.push('','提醒：本工具為少量自編學習檢核，未經標準化驗證，不能作為學習障礙、智力或其他臨床診斷。請搭配學校考卷、解題過程及老師評估。','正式學習扶助及專業評估可洽學校。');return lines.join('\n');}
+  $('startBtn').addEventListener('click',()=>{index=0;answers=Array(questions.length).fill(null);observations=Array(observationItems.length).fill(false);renderQuestion();show('quizScreen');});
+  $('prevBtn').addEventListener('click',()=>{if(index>0){index--;renderQuestion();}});
+  $('nextBtn').addEventListener('click',()=>{if(answers[index]===null)return;if(index<questions.length-1){index++;renderQuestion();}else{renderObs();show('observeScreen');}});
+  $('unknownBtn').addEventListener('click',()=>setAnswer('U'));
+  $('notTaughtBtn').addEventListener('click',()=>{if(questions[index].d==='current')setAnswer('N');});
+  $('skipAllBtn').addEventListener('click',()=>{for(let i=20;i<24;i++){if(answers[i]===null)answers[i]='N';}renderObs();show('observeScreen');});
+  $('backToQuiz').addEventListener('click',()=>{index=questions.length-1;renderQuestion();show('quizScreen');});
+  $('resultBtn').addEventListener('click',()=>{renderResults();show('resultScreen');});
+  $('printBtn').addEventListener('click',()=>window.print());
+  $('downloadBtn').addEventListener('click',()=>{const blob=new Blob(['\ufeff'+reportText],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='國二數學學習檢核報告.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+  $('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(reportText);$('copyMessage').textContent='已複製完整文字報告，可貼到 LINE 或訊息中。';}catch(e){const area=document.createElement('textarea');area.value=reportText;area.style.position='fixed';area.style.top='0';area.style.opacity='0';document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();$('copyMessage').textContent=ok?'已複製完整文字報告。':'目前瀏覽器不允許複製，請改用「下載文字報告」。';}});
+  $('restartBtn').addEventListener('click',()=>{if(confirm('確定重新檢核？本次答案將清除。'))show('startScreen');});
+  document.addEventListener('keydown',e=>{if($('quizScreen').hidden||e.altKey||e.ctrlKey||e.metaKey||e.target.tagName==='INPUT')return;const n=Number(e.key);if(n>=1&&n<=4&&Number.isInteger(n)){setAnswer(n-1);}if(e.key==='ArrowLeft'&&index>0){index--;renderQuestion();}if(e.key==='ArrowRight'&&answers[index]!==null){$('nextBtn').click();}});
+})();
+</script>
+</body>
+</html>
